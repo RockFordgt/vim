@@ -5,8 +5,25 @@ deps:
   - vim
   - git
 pathogen_dir:  $HOME/.vim/autoload
-pathogen_url: https://tpo.pe/pathogen.vim 
+pathogen_url: https://tpo.pe/pathogen.vim
+
 nerdtree_repo: https://github.com/scrooloose/nerdtree.git
-nerdtree_dest: $HOME/.vim/bundle/nerdtree     
+nerdtree_dest: $HOME/.vim/bundle/nerdtree
+
 vimrc_src:  .vimrc
 vimrc_dest: $HOME/.vimrc
+
+solarized_src: https://github.com/altercation/vim-colors-solarized.git
+solarized_dest: $HOME/.vim/bundle/vim-colors-solarized
+
+summerfruit_src: https://github.com/baeuml/summerfruit256.vim.git
+summerfruit_dest: $HOME/.vim/bundle/summerfruit
+
+indentguides_src: https://github.com/nathanaelkane/vim-indent-guides.git
+indentguides_dest: $HOME/.vim/bundle/vim-indent-guides
+
+qml_src: https://github.com/peterhoeg/vim-qml.git
+qml_dest: $HOME/.vim/bundle/qml
+
+pass_src: /usr/share/doc/pass/examples/vim/redact_pass.vim
+pass_dest: $HOME/.vim/bundle/pass/plugin

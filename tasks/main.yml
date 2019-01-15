@@ -29,6 +29,43 @@
     repo: "{{ nerdtree_repo }}" 
     dest: "{{ nerdtree_dest }}" 
 
+- name: Clone solarized
+  git:
+    repo: "{{ solarized_src }}"
+    dest: "{{ solarized_dest }}"
+
+- name: Clone summerfruit256
+  git:
+    repo: "{{ summerfruit_src }}"
+    dest: "{{ summerfruit_dest }}"
+
+- name: Clone Indent guides
+  git:
+    repo: "{{ indentguides_src }}"
+    dest: "{{ indentguides_dest }}"
+
+- name: Clone qml syntax
+  git:
+    repo: "{{ qml_src }}"
+    dest: "{{ qml_dest }}"
+
+- name: Check if pass installed
+  stat:
+    path: "{{ pass_src }}"
+  register: pass_installed
+
+- name: Make dir for pass plugin
+  file:
+    path: "{{ pass_dest }}"
+    state: directory
+  when: pass_installed
+
+- name: Copy pass plugin
+  command: >
+    cp "{{ pass_src }}" "{{ pass_dest }}"
+  args:
+    creates: $HOME/.vim/bundle/pass/plugin/redact_pass.vim
+
 - name: check if vimrc exists
   stat: 
     path: "{{ vimrc_dest }}"
