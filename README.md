@@ -29,5 +29,11 @@ Please also prepare the inventory file call it 'inventory' with the content as f
 [local]
 127.0.0.1
 ```
-Then please run ansible-playbook -i inventory playbook.yml
+
+Finally run ansible-playbook:
+
+```
+$ansible-playbook -i inventory.txt --connection local --ask-become-pass playbook.yml
+```
+
 The files should one level outside this repository not within it
