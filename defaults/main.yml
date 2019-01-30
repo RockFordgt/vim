@@ -13,8 +13,13 @@ nerdtree_dest: $HOME/.vim/bundle/nerdtree
 vimrc_src:  .vimrc
 vimrc_dest: $HOME/.vimrc
 
-solarized_src: https://github.com/altercation/vim-colors-solarized.git
-solarized_dest: $HOME/.vim/bundle/vim-colors-solarized
+#original solarized theme:
+#solarized_src: https://github.com/altercation/vim-colors-solarized.git
+#solarized_dest: $HOME/.vim/bundle/vim-colors-solarized
+
+#alternate with better support for non truecolro theme
+solarized_src: https://github.com/lifepillar/vim-solarized8.git
+solarized_dest: $HOME/.vim/bundle/vim-colors-solarized8
 
 summerfruit_src: https://github.com/baeuml/summerfruit256.vim.git
 summerfruit_dest: $HOME/.vim/bundle/summerfruit
