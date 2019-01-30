@@ -58,13 +58,14 @@
   file:
     path: "{{ pass_dest }}"
     state: directory
-  when: pass_installed
+  when: pass_installed.stat.exists
 
 - name: Copy pass plugin
   command: >
     cp "{{ pass_src }}" "{{ pass_dest }}"
   args:
     creates: $HOME/.vim/bundle/pass/plugin/redact_pass.vim
+  when: pass_installed.stat.exists
 
 - name: check if vimrc exists
   stat: 
