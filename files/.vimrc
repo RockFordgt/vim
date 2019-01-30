@@ -35,15 +35,7 @@ set expandtab "zamienia taby na spacje
 set autoindent
 set foldmethod=syntax
 
-"how meny collors ther is
-"setting appropriate color scheme depending on GUI or not
-if has("gui_running")
-    "colorscheme summerfruit
-    set guifont=Oxygen\ Mono\ 14  
-else
-    set t_Co=256
-    colorscheme summerfruit256
-endif
+set guifont=Oxygen\ Mono\ 14  
 
 set spell
 
@@ -51,6 +43,10 @@ set spell
 "https://vi.stackexchange.com/questions/422/displaying-tabs-as-characters
 set list
 "set listchars=tab:>-
+"if you see errors on this line, setup utf-8 locales:
+" apt-get install locale
+"for en_US lang
+" locale-gen en_US.UTF-8
 set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
 
 " write as root
@@ -62,6 +58,16 @@ cmap w!! w !sudo tee % > /dev/null
 let g:indent_guides_enable_on_vim_startup = 1
 "let g:indent_guides_start_level = 2
 let g:indent_guides_auto_colors = 0
+
+"solarized have some problems with proper setting colors for tabs:
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=base2
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=7  guibg=#e7e1d0
+
+"ctermbg=#eee8d5
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=base3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=11 guibg=#fdf6e3
+
+
 
 "https://stackoverflow.com/questions/32154285/folding-expanding-and-colapsing-xml-tags-in-vim-xml-parsing
 augroup XML
