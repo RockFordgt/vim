@@ -5,7 +5,18 @@ A brief description of the role goes here. Setups vim and .vimrc
 
 
 Downloads the following plugins:
+  - pathogen
   - NERDTree
+  - indentguides
+
+Colorchemas:
+  - solarized8
+  - summerfruit
+
+Syntax files:
+  - qml
+
+if pass is installed also adds `redact_pass.vim`
 
 
 Requirements
@@ -16,24 +27,16 @@ Vim and Git are downloaded via repository manager
 How to run 
 ----------
 
-After clone Prepare the following playbook.yml file with the content
+Clone the repo
 ```
-- hosts: all
-  connection: local
-  become: yes
-  roles:
-    - vim 
+git clone https://github.com/RockFordgt/vim.git
 ```
-Please also prepare the inventory file call it 'inventory' with the content as follows:
-```
-[local]
-127.0.0.1
-```
+Notice: do not `cd` into the vim direcotry.
 
-Finally run ansible-playbook:
+Run ansible-playbook:
 
 ```
-$ansible-playbook -i inventory.txt --connection local --ask-become-pass playbook.yml
+$ansible-playbook -i vim/inventory.txt --connection local --ask-become-pass vim/playbook.yml
 ```
 
 The files should one level outside this repository not within it
