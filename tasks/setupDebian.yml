@@ -2,6 +2,7 @@
 # tasks file for vim
 - name: Install vim and git
   become: yes
+  become_method: sudo
   apt:
     name: "{{ deps }}"
     state: latest

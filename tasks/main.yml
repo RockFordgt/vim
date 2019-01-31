@@ -83,3 +83,14 @@
   copy:
     src: "{{ vimrc_src }}"
     dest: "{{ vimrc_dest }}"
+
+# TODO: YouCompleteMe
+#      https://valloric.github.io/YouCompleteMe/
+
+# TODO: color_coded:
+#      https://github.com/jeaye/color_coded
+
+
+# TODO?: rtags 
+#      https://github.com/lyuts/vim-rtags
+#      https://github.com/Andersbakken/rtags

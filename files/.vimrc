@@ -35,6 +35,8 @@ set expandtab "zamienia taby na spacje
 set autoindent
 set foldmethod=syntax
 
+set visualbell
+
 set guifont=Oxygen\ Mono\ 14  
 
 set spell
