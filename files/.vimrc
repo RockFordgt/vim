@@ -49,7 +49,7 @@ set list
 " apt-get install locale
 "for en_US lang
 " locale-gen en_US.UTF-8
-set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
+set listchars=eol:⏎,tab:·,trail:>-,nbsp:⎵
 
 " write as root
 cmap w!! w !sudo tee % > /dev/null
@@ -79,5 +79,17 @@ augroup XML
     autocmd FileType xml :syntax on
     autocmd FileType xml :%foldopen!
 augroup END
+
+augroup YAML
+    autocmd!
+    autocmd FileType yaml let g:indent_guides_start_level=2
+    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab foldmethod=indent
+    autocmd FileType yaml :syntax on
+    autocmd FileType yaml :%foldopen!
+    autocmd FileType yaml :set nospell
+augroup END
+
+
+map <S-F1> :NERDTreeToggle<CR>
 
 
